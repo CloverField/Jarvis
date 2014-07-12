@@ -97,21 +97,5 @@ namespace Jarvis
             }
 			return false;
     	}
-
-        private bool userNetwork(List<string> userInput)
-        {
-            foreach (string s in userInput)
-            {
-                if (s.ToLower().Equals("network"))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return false;
-        }
     }
 }
