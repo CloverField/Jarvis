@@ -8,13 +8,12 @@ namespace Jarvis
 {
     class Logic
     {
-        public bool userTime(List<string> question)
+		public bool userTime(List<string> userInput)
         {
-            foreach (string s in question)
+			foreach (string s in userInput)
             {
                 if (s.ToLower().Equals("time"))
                 {
-                    Time t = new Time();
                     return true;
                 }
                 else
@@ -24,5 +23,21 @@ namespace Jarvis
             }
             return false;
         }
+
+		public bool userDate(List<string> userInput)
+		{
+            foreach (string s in userInput)
+            {
+                if(s.ToLower().Equals("date"))
+                {
+                    return true
+                }
+                else
+                {
+                    return false
+                }
+            }
+            return false
+    	}
     }
 }
