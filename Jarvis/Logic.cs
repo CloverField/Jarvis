@@ -14,31 +14,31 @@ namespace Jarvis
 			Time t = new Time();
 			if (userTime (userInput)) 
             {
-				return(Si.getUser () + " asked about the time. The time is " + t.getCurrentTime ());
+				return(Si.getUser () + " asked about the time. The time is " + t.getCurrentTime());
 			} 
-            else if (userDate (userInput)) 
+            else if (userDate(userInput)) 
             {
-				return(Si.getUser () + " asked about the date. The date is " + t.getCurrentDate ());
+				return(Si.getUser() + " asked about the date. The date is " + t.getCurrentDate());
 			} 
 			else if(userSystem(userInput))
 			{
-				return(Si.getUser () + " asked about the system. You are currently running " + Si.getOS ());
+				return(Si.getUser() + " asked about the system. You are currently running " + Si.getOS());
 			}
-			else if(userExit(userInput))
-			{
-				return "0";
-			}
+            else if (userExit(userInput))
+            {
+                return "0";
+            }
             else
             {
-				return("Im sorry I dont have a responce for that.");
-			}
+                return ("Im sorry I dont have a responce for that.");
+            }
 		}
 
 		private bool userExit(List<string> userInput)
 		{
 			foreach (string s in userInput) 
 			{
-				if (s.ToLower ().Equals ("exit")) 
+				if (s.ToLower().Equals("exit")) 
 				{
 					return true;
 				} 
@@ -54,7 +54,7 @@ namespace Jarvis
 		{
 			foreach (String s in userInput)
 			{
-				if (s.ToLower ().Equals ("system")) 
+				if (s.ToLower().Equals("system")) 
 				{
 					return true;
 				} 
@@ -97,5 +97,21 @@ namespace Jarvis
             }
 			return false;
     	}
+
+        private bool userNetwork(List<string> userInput)
+        {
+            foreach (string s in userInput)
+            {
+                if (s.ToLower().Equals("network"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
     }
 }

@@ -29,10 +29,9 @@ namespace Jarvis
 				}
 				else{
 					System.Console.WriteLine (l.checkInput (responce));
+                    responce.Clear();
 				}
-				responce.Clear();
 			}
-            System.Console.ReadLine();
         }
     }
 }
