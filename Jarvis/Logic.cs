@@ -8,21 +8,21 @@ namespace Jarvis
 {
     class Logic
     {
-        public string userTime(List<string> question)
+        public bool userTime(List<string> question)
         {
             foreach (string s in question)
             {
-                if (s.Equals("Time")||s.Equals("time"))
+                if (s.ToLower().Equals("time"))
                 {
                     Time t = new Time();
-                    return t.getCurrentTime();
+                    return true;
                 }
                 else
                 {
-                    return "";
+                    return false;
                 }
             }
-            return "";
+            return false;
         }
     }
 }
