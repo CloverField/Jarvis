@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Files.cs" />
     <Compile Include="Logic.cs" />
+    <Compile Include="RandomNumGen.cs" />
     <Compile Include="SystemInfo.cs" />
     <Compile Include="Time.cs" />
     <Compile Include="Program.cs" />
