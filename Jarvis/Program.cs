@@ -19,9 +19,19 @@ namespace Jarvis
             System.Console.WriteLine("The current date is " + t.getCurrentDate() + ".");
             System.Console.WriteLine("The currrent user is " + si.getUser() + ".");
             System.Console.WriteLine("The current OS version is " + si.getOS() + ".");
-			System.Console.WriteLine ("Would you like know about the time? If you do please respond time.");
-            responce.Add(Console.ReadLine());
-			System.Console.WriteLine (l.checkInput (responce));
+			System.Console.WriteLine ("What would you like to know?");
+			while (true) 
+			{
+				responce.Add (Console.ReadLine ());
+				if (l.checkInput (responce).Equals ("0")) {
+					System.Console.WriteLine ("See you later");
+					Environment.Exit (0);
+				}
+				else{
+					System.Console.WriteLine (l.checkInput (responce));
+				}
+				responce.Clear();
+			}
             System.Console.ReadLine();
         }
     }

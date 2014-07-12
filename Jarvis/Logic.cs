@@ -14,19 +14,59 @@ namespace Jarvis
 			Time t = new Time();
 			if (userTime (userInput)) 
             {
-				return(Si.getUser () + " asked about the time the time is " + t.getCurrentTime ());
+				return(Si.getUser () + " asked about the time. The time is " + t.getCurrentTime ());
 			} 
             else if (userDate (userInput)) 
             {
-				return(Si.getUser () + " asked about the date the date is " + t.getCurrentDate ());
+				return(Si.getUser () + " asked about the date. The date is " + t.getCurrentDate ());
 			} 
-            else 
+			else if(userSystem(userInput))
+			{
+				return(Si.getUser () + " asked about the system. You are currently running " + Si.getOS ());
+			}
+			else if(userExit(userInput))
+			{
+				return "0";
+			}
+            else
             {
-				return("The user did not ask about the time or the date.");
+				return("Im sorry I dont have a responce for that.");
 			}
 		}
 
-		public bool userTime(List<string> userInput)
+		private bool userExit(List<string> userInput)
+		{
+			foreach (string s in userInput) 
+			{
+				if (s.ToLower ().Equals ("exit")) 
+				{
+					return true;
+				} 
+				else 
+				{
+					return false;
+				}
+			}
+			return false;
+		}
+
+		private bool userSystem(List<string> userInput)
+		{
+			foreach (String s in userInput)
+			{
+				if (s.ToLower ().Equals ("system")) 
+				{
+					return true;
+				} 
+				else 
+				{
+					return false;
+				}
+			}
+			return false;
+		}
+
+		private bool userTime(List<string> userInput)
         {
 			foreach (string s in userInput)
             {
@@ -42,7 +82,7 @@ namespace Jarvis
             return false;
         }
 
-		public bool userDate(List<string> userInput)
+		private bool userDate(List<string> userInput)
 		{
             foreach (string s in userInput)
             {
