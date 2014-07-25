@@ -26,7 +26,6 @@ namespace Jarvis
         {
             if (canWriteHere(path))
             {
-
                 try
                 {
                     System.IO.File.Create(path + "/" + filename);

@@ -97,5 +97,21 @@ namespace Jarvis
             }
 			return false;
     	}
+
+        private bool userCalc(List<string> userInput)
+        {
+            foreach (string s in userInput)
+            {
+                if (s.ToLower().Equals("calc"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
     }
 }
